@@ -1,0 +1,108 @@
+@import 'reset';
+.app {
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	&-wrapper{
+		width: 60%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 50px;
+		padding: 20px;
+		border-radius: 10px;
+		border: 1px solid black;
+		@media(max-width: 767px){
+			width: 80%;
+		}
+	}
+	&-form{
+		display: flex;
+		justify-content: space-between;
+		@media(max-width: 767px) {
+			flex-direction: column;
+		}
+		.input{
+			width: 67%;
+			border: 1px solid black;
+			padding: 6px;
+			border-radius: 4;
+			@media(max-width: 767px) {
+				width: 100%;
+				margin-bottom: 8px;
+		}
+		}
+		.button{
+			width: 27%;
+			border: 1px solid black;
+			padding: 6px 10px;
+			border-radius: 4px;
+			@media(max-width: 767px) {
+				width: 100%;
+			}
+		}
+	}
+	&-data-wrapper{
+		display: flex;
+		flex-direction: column;
+		margin: 10px 0px;
+
+	}
+	&-data-title{
+		font-size: 18px;
+		padding: 6px 10px;
+		margin-bottom: 10px;
+	}
+	&-data{
+		display: flex;
+		justify-content: space-between;
+		border: 1px solid black;
+		padding: 20px;
+		@media(max-width: 767px){
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+		}
+	}
+	&-data-item{
+		margin: 0px 10px;
+		text-align: center;
+		@media(max-width: 767px){
+			margin: 0px 5px;
+		}
+		span{
+			margin: 4px 0px;
+		}
+		p{
+			margin: 4px 0px;
+		}
+	}
+	&-chart-wrapper{
+		display: flex;
+		flex-direction: column;
+		margin: 10px 0px;
+	}
+	&-chart-title{
+		font-size: 18px;
+		padding: 6px 10px;
+		margin-bottom: 10px;
+	}
+	&-chart{
+		position: relative;
+		top: 0;
+		left: 0;
+		
+		div{
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			padding: 0 0 67% 0;
+			object-fit: cover;
+			background-color: grey;
+		}
+	}
+}
+
+

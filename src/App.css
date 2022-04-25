@@ -1,29 +1,265 @@
-.App {
-	font-size: 18px;
+@charset "UTF-8";
+/* Обнуление */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
 button {
-	border: 2px solid #f2f2f2;
-	background: none;
-	flex-basis: 48%;
-	display: inline-block;
-	line-height: 2;
-	text-decoration: none;
-	padding: 5px;
-	text-align: center;
-	font-size: 15px;
-	color: #125688;
-	transition: all 0.2s;
-	box-sizing: padding-box;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
 }
-button hover {
-	border-color: #125688;
-	outline: 0;
+
+address {
+  font-style: normal;
 }
-input {
-	width: 100%;
-	border: 0;
-	padding: 10px 0;
-	border-bottom: 1px solid #f2f2f2;
-	outline: none;
-	resize: vertical;
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*-----------------------*/
+.app {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.app-wrapper {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+@media (max-width: 767px) {
+  .app-wrapper {
+    width: 80%;
+  }
+}
+
+.app-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .app-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.app-form .input {
+  width: 67%;
+  border: 1px solid black;
+  padding: 6px;
+  border-radius: 4;
+}
+
+@media (max-width: 767px) {
+  .app-form .input {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.app-form .button {
+  width: 27%;
+  border: 1px solid black;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+  .app-form .button {
+    width: 100%;
+  }
+}
+
+.app-data-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 0px;
+}
+
+.app-data-title {
+  font-size: 18px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+}
+
+.app-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+@media (max-width: 767px) {
+  .app-data {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 20px;
+  }
+}
+
+.app-data-item {
+  margin: 0px 10px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .app-data-item {
+    margin: 0px 5px;
+  }
+}
+
+.app-data-item span {
+  margin: 4px 0px;
+}
+
+.app-data-item p {
+  margin: 4px 0px;
+}
+
+.app-chart-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 0px;
+}
+
+.app-chart-title {
+  font-size: 18px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+}
+
+.app-chart {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.app-chart div {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 0 67% 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: grey;
 }
