@@ -1,7 +1,23 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect } from 'react';
+import { loadDataForChart } from './redux/actions/chart';
+import { useDispatch, useSelector } from 'react-redux';
+import './scss/App.css';
 
 function App() {
+
+	const dispatch = useDispatch();
+
+	//для логування стейта
+	const state = useSelector(state => {
+		return state;
+	});
+	console.log('state', state);
+
+
+	useEffect(() => {
+		//dispatch(loadDataForChart())
+	}, [dispatch])
+
 	return (
 		<section className="app">
 			<article className='app-wrapper'>
