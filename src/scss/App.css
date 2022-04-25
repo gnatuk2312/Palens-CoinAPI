@@ -169,6 +169,12 @@ h6 {
   }
 }
 
+.app .app-error {
+  font-size: 12px;
+  padding: 2px 0px;
+  color: red;
+}
+
 .app-data-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

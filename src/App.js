@@ -29,7 +29,7 @@ function App() {
 					<ul className='app-data'>
 						<li className='app-data-item'>
 							<span>Symbol:</span>
-							<p>BTC</p>
+							<p>{state.chartReducer.currency}</p>
 						</li>
 						<li className='app-data-item'>
 							<span>Price:</span>
