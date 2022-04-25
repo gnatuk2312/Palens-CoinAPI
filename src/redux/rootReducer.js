@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import { reducer } from "./reducers/reducer";
+import { chartReducer } from "./reducers/chartReducer";
 
 export const rootReducer = combineReducers({
-	reducer
+	chartReducer
 })
