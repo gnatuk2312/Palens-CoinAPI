@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import { loadDataForChart } from './redux/actions/chart';
+//import { loadDataForChart } from './redux/actions/chart';
 import { useDispatch, useSelector } from 'react-redux';
 import './scss/App.css';
+import Form from './components/Form';
+import { Chart } from './components/Chart';
+
 
 function App() {
-
 	const dispatch = useDispatch();
 
 	//для логування стейта
@@ -21,10 +23,7 @@ function App() {
 	return (
 		<section className="app">
 			<article className='app-wrapper'>
-				<form className='app-form'>
-					<input type='text' className='input' placeholder='Назва криптовалюти' />
-					<button type='submit' className='button'>Subscribe</button>
-				</form>
+				<Form />
 				<div className='app-data-wrapper'>
 					<p className='app-data-title'>Market data:</p>
 					<ul className='app-data'>
@@ -45,7 +44,7 @@ function App() {
 				<div className='app-chart-wrapper'>
 					<p className='app-chart-title'>Charting data:</p>
 					<div className='app-chart'>
-						<div></div>
+						<Chart />
 					</div>
 				</div>
 			</article>
