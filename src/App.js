@@ -12,7 +12,7 @@ function App() {
 	const timeParagrahp = useRef();
 
 	const ws = new WebSocket('wss://ws-sandbox.coinapi.io/v1/')
-	ws.addEventListener('open', (e) => {
+	ws.addEventListener('open', () => {
 		ws.send(JSON.stringify({
 			"type": "hello",
 			"apikey": "B691B7B0-5616-4419-BD62-3AF6ED85B723",
