@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { loadDataForChart } from './redux/actions/chart';
 import { useDispatch, useSelector } from 'react-redux';
-import './scss/App.css';
 import Form from './components/Form';
 import { Chart } from './components/Chart';
+import { Toaster } from 'react-hot-toast';
+import './scss/App.css';
 
 
 function App() {
@@ -39,11 +40,9 @@ function App() {
 		}))
 	};
 
-	//для логування стейта
 	const state = useSelector(state => {
 		return state;
 	});
-	console.log('state', state);
 
 	useEffect(() => {
 		dispatch(loadDataForChart())
@@ -52,6 +51,7 @@ function App() {
 
 	return (
 		<section className="app">
+			<Toaster position="bottom-center" toastOptions={{ duration: 5000, className: 'toaster' }} />
 			<article className='app-wrapper'>
 				<Form handleChangeCurrency={handleChangeCurrency} />
 				<div className='app-data-wrapper'>

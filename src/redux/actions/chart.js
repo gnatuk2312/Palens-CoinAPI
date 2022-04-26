@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import { SET_DATA_FOR_CHARTS } from "../types";
 
 export const loadDataForChart = (currency = "BTC/USD") => {
@@ -11,7 +12,6 @@ export const loadDataForChart = (currency = "BTC/USD") => {
 					}
 				}
 			)
-			console.log('response', response);
 			const data = [];
 			response.data.map(item => {
 				return data.push({
@@ -23,9 +23,10 @@ export const loadDataForChart = (currency = "BTC/USD") => {
 				type: SET_DATA_FOR_CHARTS,
 				payload: data
 			})
+			toast.success(`New chart of ${currency}`)
 
-		} catch (e) {
-			console.log('error', e);
+		} catch (err) {
+			toast.error(`Error ${err}`)
 		}
 	}
 }

@@ -25,8 +25,6 @@ ChartJS.register(
 export const Chart = () => {
 
 	const { chart, currency } = useSelector(state => state.chartReducer);
-	console.log('chart', chart);
-	console.log('currency', currency);
 	const data = {
 		labels: chart.map(item => {
 			return item.time_open
