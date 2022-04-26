@@ -55,7 +55,12 @@ export const Chart = () => {
 		},
 	};
 	return (
-		<Line options={options} data={data} />
+		<div className='app-chart-wrapper'>
+			<p className='app-chart-title'>Charting data:</p>
+			<div className='app-chart'>
+				<Line options={options} data={data} />
+			</div>
+		</div>
 	);
 };
 

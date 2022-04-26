@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 export const useValidation = (value, validations, name) => {
 
 	const [isEmpty, setEmpty] = useState(false);
-	const [isEnglish, setLoginError] = useState(false);
 
 	const [inputValid, setInputValid] = useState(false);
 
@@ -13,11 +12,6 @@ export const useValidation = (value, validations, name) => {
 				case 'isEmpty':
 					value ? setEmpty(false) : setEmpty(true)
 					break;
-
-				case 'isEnglish':
-					const re = /^[a-zA-Z]+$/;
-					re.test(String(value).toLowerCase()) ? setLoginError(false) : setLoginError(true);
-					break;
 				default:
 					return null;
 			}
@@ -26,17 +20,16 @@ export const useValidation = (value, validations, name) => {
 	}, [value, validations]);
 
 	useEffect(() => {
-		if (isEmpty || isEnglish) {
+		if (isEmpty) {
 			setInputValid(false);
 		} else {
 			setInputValid(true);
 		}
 
-	}, [isEmpty, isEnglish])
+	}, [isEmpty])
 
 	return {
 		isEmpty,
-		isEnglish,
 		inputValid
 	};
 };

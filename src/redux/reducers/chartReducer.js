@@ -1,11 +1,10 @@
 import { SET_DATA_FOR_CHARTS, SET_NAME_OF_CURRENCY } from '../types'
 
 const initialState = {
-	currency: "BTC",
+	currency: "BTC/USD",
 	chart: [],
 }
 export const chartReducer = (state = initialState, action) => {
-	console.log('action', action);
 
 	switch (action.type) {
 

@@ -1,13 +1,13 @@
 import axios from "axios";
 import { SET_DATA_FOR_CHARTS } from "../types";
 
-export const loadDataForChart = (currency = "BTC") => {
+export const loadDataForChart = (currency = "BTC/USD") => {
 	return async dispatch => {
 		try {
-			const response = await axios.get(`https://rest.coinapi.io/v1/ohlcv/${currency}/USD/history?period_id=1MTH&time_start=2021-01-01`,
+			const response = await axios.get(`https://rest.coinapi.io/v1/ohlcv/${currency}/history?period_id=1MTH&time_start=2021-02-01`,
 				{
 					headers: {
-						"X-CoinAPI-Key": "B691B7B0-5616-4419-BD62-3AF6ED85B723"
+						"X-CoinAPI-Key": "213362F1-135E-4DB2-B4F8-752BC634C941"
 					}
 				}
 			)
@@ -25,7 +25,7 @@ export const loadDataForChart = (currency = "BTC") => {
 			})
 
 		} catch (e) {
-
+			console.log('error', e);
 		}
 	}
 }

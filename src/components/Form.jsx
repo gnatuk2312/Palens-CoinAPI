@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useInput } from '../hooks/useInput';
-//import { loadDataForChart } from '../redux/actions/chart';
+import { loadDataForChart } from '../redux/actions/chart';
 import { setNameOfCurrency } from '../redux/actions/currency';
 
-const Form = () => {
+const Form = ({ handleChangeCurrency }) => {
 	const dispatch = useDispatch();
 
 	const [currency, setCurrency] = useState('');
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		console.log('curr', currency);
 		const uppercase = currency.toUpperCase();
 		dispatch(setNameOfCurrency(uppercase));
-		//dispatch(loadDataForChart(uppercase));
+		dispatch(loadDataForChart(uppercase));
+		handleChangeCurrency(uppercase);
 	};
 	const changeHandler = (e) => {
 		inputValidation.onChange(e)
 		setCurrency(e.target.value);
 	}
 
-	const inputValidation = useInput('', { isEmpty: true, isEnglish: true })
+	const inputValidation = useInput('', { isEmpty: true })
 
 	return (
 		<>
@@ -32,11 +32,10 @@ const Form = () => {
 					value={inputValidation.value}
 					type='text'
 					className='input'
-					placeholder='currency (BTC, ETH, LINK...)' />
+					placeholder='BTC/USD, ETH/USD...' />
 				<button disabled={!inputValidation.inputValid} type='submit' className='button'>Subscribe</button>
 			</form>
 			{(inputValidation.isDirty && inputValidation.isEmpty) && <p className='app-error'>Input is empty</p>}
-			{(inputValidation.isDirty && inputValidation.isEnglish) && <p className='app-error'>Only English letters (btc, eth, bnb)</p>}
 		</>
 	)
 }
